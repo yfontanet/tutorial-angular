@@ -21,8 +21,9 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": "dist/act2",
-            "baseHref": "/tutorial-angular/",
+            "index": "src/index.html",
             "browser": "src/main.ts",
+            "baseHref": "/tutorial-angular/",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
