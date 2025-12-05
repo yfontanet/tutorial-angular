@@ -1,0 +1,305 @@
+<h1>TUTORIAL COMPLETO — Angular UI Framework</h1>
+
+<nav>
+  <ul>
+    <li><a [routerLink]="[]" fragment="justificacion">1. Justificación del framework</a></li>
+    <li><a [routerLink]="[]" fragment="instalacion">2. Instalación</a></li>
+    <li><a [routerLink]="[]" fragment="primeros-pasos">3. Primeros pasos</a></li>
+    <li><a [routerLink]="[]" fragment="utilizacion">4. Utilización del framework</a></li>
+    <li><a [routerLink]="[]" fragment="explicacion">5. Explicación del funcionamiento</a></li>
+    <li><a [routerLink]="[]" fragment="conclusiones">6. Conclusiones</a></li>
+
+  </ul>
+</nav>
+
+<section id="justificacion">
+  <h2>1. Justificación del framework</h2>
+
+  <h3>¿Para qué sirve Angular?</h3>
+  <p>
+    Angular es un framework de desarrollo frontend creado por Google. Sirve para construir aplicaciones web modernas, interactivas y escalables utilizando TypeScript. Angular destaca por ofrecer una arquitectura robusta que favorece la creación de interfaces modulares y mantenibles.
+  </p>
+
+  <h3>¿Qué aplicaciones tiene?</h3>
+  <ul>
+    <li>Aplicaciones web SPA (Single Page Applications).</li>
+    <li>Paneles administrativos y dashboards.</li>
+    <li>Aplicaciones empresariales de alto volumen de datos.</li>
+    <li>Portales dinámicos con manejo de rutas y estados.</li>
+    <li>Aplicaciones progresivas (PWA).</li>
+  </ul>
+
+  <h3>¿Sobre qué lenguajes se apoya?</h3>
+  <ul>
+    <li>TypeScript (lenguaje principal)</li>
+    <li>HTML</li>
+    <li>CSS / SCSS</li>
+    <li>JavaScript (para interoperabilidad)</li>
+  </ul>
+
+  <h3>¿Qué prerrequisitos necesita?</h3>
+  <ul>
+    <li>Node.js (v18 o superior)</li>
+    <li>npm (gestor incluido en Node)</li>
+    <li>Angular CLI</li>
+    <li>Conocimientos básicos de HTML, CSS y JS</li>
+    <li>Editor de código (VS Code recomendado)</li>
+  </ul>
+</section>
+
+<section id="instalacion">
+  <h2>2. Instalación</h2>
+
+  <h3>¿Se precisa instalación?</h3>
+  <p>Sí. Angular requiere instalar Node.js y la CLI oficial.</p>
+
+  <h3>Instalar Node.js</h3>
+  <p>Descargar desde la web oficial e instalar con valores por defecto.</p>
+  <p>Comprobar la instalación:</p>
+  <pre><code ngNonBindable>
+node -v
+npm -v
+  </code></pre>
+  
+  <h3>Instalar Angular CLI</h3>
+  <pre><code ngNonBindable>
+npm install -g @angular/cli
+  </code></pre>
+  <p>Verificar:</p>
+  <pre><code ngNonBindable>
+ng version
+  </code></pre>
+  <img src="assets/images/angular-cli.png" alt="Angular CLI Version" class="card-image">
+
+  <h3>Versiones necesarias</h3>
+  <ul>
+    <li>Angular CLI 17+</li>
+    <li>Node.js 18+</li>
+    <li>npm 9+</li>
+  </ul>
+
+  <h3>Rutas para tener en cuenta</h3>
+  <p>La CLI generará un proyecto con la siguiente estructura base:</p>
+  <pre><code ngNonBindable>
+/src  
+  /app  
+  /assets  
+angular.json  
+package.json  
+tsconfig.json
+  </code></pre>
+
+  <h3>Variables de entorno</h3>
+  <p>No requiere variables obligatorias para funcionar, pero opcionalmente se pueden configurar en:</p>
+  <pre><code ngNonBindable>
+src/environments/environment.ts
+  </code></pre>
+
+  <h3>¿Necesita base de datos?</h3>
+  <p>Angular NO incluye base de datos.</p>
+  <p>Puede conectarse a cualquier API REST (Node, Laravel, Java, Firebase, etc.).</p>
+    
+</section>
+
+<section id="primeros-pasos">
+  <h2>3. Primeros pasos — “Hola Mundo”</h2>
+  <h3>1. Crear un nuevo proyecto</h3>
+  <pre><code ngNonBindable>
+ng new mi-proyecto
+  </code></pre>
+  <p>Seleccionar las siguientes opciones:</p>
+  <ul>
+    <li>¿Usar routing? → Sí</li>
+    <li>Estilo de hojas → CSS (o SCSS)</li>
+  </ul>
+
+  <h3>2. Ejecutar el servidor</h3>
+  <pre><code ngNonBindable>
+cd mi-proyecto
+ng serve -o
+  </code></pre>
+  <p>Se abrirá en: <code>http://localhost:4200</code></p>
+  <img src="assets/images/angular-serve.png" alt="Angular Serve" class="card-image">
+
+  <h3>3. Mostrar “Hola Mundo”</h3>
+  <p>Editar el archivo <code>src/app/app.html</code>:</p>
+  <pre><code ngNonBindable>
+&lt;h1&gt;Hola Mundo desde Angular!&lt;/h1&gt;
+  </code></pre>
+  <img src="assets/images/angular-hola-mundo.png" alt="Angular Hola Mundo" class="card-image">
+</section>
+
+<section id="utilizacion">
+  <h2>4. Utilización del framework</h2>
+
+  <h3>Crear una aplicación base</h3>
+  <p>Crear un componente:</p>
+  <pre><code ngNonBindable>
+ng generate component usuarios
+  </code></pre>
+
+  <p>Se generan 4 archivos:</p>
+  <pre><code ngNonBindable> 
+usuarios.scss
+usuarios.spec.ts
+usuarios.ts
+usuarios.html
+  </code></pre>
+
+  <p>Agregar contenido al HTML:</p>
+  <pre><code ngNonBindable> 
+&lt;h2&gt;Listado de usuarios&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Usuario 1&lt;/li&gt;
+  &lt;li&gt;Usuario 2&lt;/li&gt;
+&lt;/ul&gt;
+  </code></pre>
+
+  <p>Mostrar el componente en app.html:</p>
+  <pre><code ngNonBindable> 
+&lt;h1&gt;Aplicación Angular Base&lt;/h1&gt;
+&lt;app-usuarios&gt;&lt;/app-usuarios&gt;
+  </code></pre>
+
+  <p>Es importante que en el archivo app.ts se añada la importación.</p>
+  <p>Debería quedar de la siguiente manera:</p>
+  <pre><code ngNonBindable>
+import &#123; Component, signal &#125; from '@angular/core';
+import &#123; Usuarios &#125; from './usuarios/usuarios';
+
+@Component(&#123;
+  selector: 'app-root',
+  standalone: true,
+  imports: [Usuarios],
+  templateUrl: './app.html',
+  styleUrl: './app.scss'
+&#125;)
+export class App &#123;
+  protected readonly title = signal('mi-proyecto');
+&#125;
+  </code></pre>
+
+  <h3>Visualizar resultados</h3>
+  <p>Ejecutar:</p>
+  <pre><code ngNonBindable>
+ng serve
+  </code></pre>
+  <p>Abrir el navegador en:</p>
+  <pre><code ngNonBindable>
+http://localhost:4200
+  </code></pre>
+  <img src="assets/images/angular-usuarios.png" alt="Angular Usuarios Component" class="card-image">
+</section>
+
+<section id="explicacion">
+  <h2>5. Explicación del funcionamiento del framework</h2>
+
+  <h3>¿Actúa sobre páginas, ficheros o secciones?</h3>
+  <p>Angular trabaja principalmente sobre:</p>
+  <ul>
+    <li>Componentes (unidades visuales)</li>
+    <li>Módulos</li>
+    <li>Servicios (lógica de negocio)</li>
+    <li>Rutas</li>
+    <li>Plantillas HTML</li>
+  </ul>
+  <p>Cada componente representa una “parte” de la aplicación.</p>
+
+  <h3>¿Cómo se editan los ficheros?</h3>
+  <p>Composición de un componente:</p>
+  <ul>
+    <li>HTML → Vista</li>
+    <li>TS → Lógica</li>
+    <li>CSS → Estilos</li>
+  </ul>
+
+  <p>Ejemplo. En usuarios.ts indicamos en la parte de export los usuarios y importamos NgFor :</p>
+  <pre><code ngNonBindable>
+import &#123; Component &#125; from '@angular/core';
+import &#123; NgFor &#125; from '@angular/common';
+
+@Component(&#123;
+  selector: 'app-usuarios',
+  standalone: true,
+  imports: [NgFor],
+  templateUrl: './usuarios.html',
+  styleUrl: './usuarios.scss',
+&#125;)
+export class Usuarios &#123;
+  usuarios = ["Ana", "Pedro", "Lucía"];
+&#125;
+  </code></pre>
+
+  <p>Y en usuarios.html :</p>
+  <pre><code ngNonBindable> 
+&lt;ul&gt;
+  &lt;li *ngFor="let u of usuarios"&gt;{{ u }}&lt;/li&gt;
+&lt;/ul&gt;
+  </code></pre>
+  <img src="assets/images/angular-usuarios-lista.png" alt="Angular Usuarios Lista" class="card-image">
+
+  <p>Por último modificamos usuarios.scss con una apariencia sencilla para que sea visualmente más atractivo.</p>
+  <pre><code ngNonBindable> 
+ul &#123;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+&#125;
+
+li &#123;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee; /* Separador suave */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  transition: background-color 0.2s;
+&#125;
+
+li:last-child &#123;
+  border-bottom: none;
+&#125;
+  </code></pre>
+  <img src="assets/images/angular-usuarios-estilos.png" alt="Angular Usuarios Estilos" class="card-image">
+
+  <h3>¿Cómo se referencian desde otras aplicaciones?</h3>
+  <p>Angular puede exportar módulos reutilizables con:</p>
+  <pre><code ngNonBindable>
+@NgModule(&#123;
+    exports: [Usuarios]
+&#125;)
+export class UsuariosModule &#123; &#125;
+  </code></pre>
+
+  <p>O consumir APIs externas mediante servicios.</p>
+  <p>Ejemplo:</p>
+  <pre><code ngNonBindable>
+this.http.get('https://api.example.com/users')
+  </code></pre>
+</section>
+
+<section id="conclusiones">
+  <h2>6. Conclusiones</h2>
+  <p>Al finalizar este tutorial, el lector habrá aprendido:</p>
+  <ul>
+    <li>Qué es Angular y por qué es uno de los frameworks más usados.</li>
+    <li>Cómo instalar y configurar Angular CLI.</li>
+    <li>Crear aplicaciones SPA desde cero.</li>
+    <li>Comprender la arquitectura de componentes.</li>
+    <li>Generar componentes, rutas y servicios básicos.</li>
+    <li>Visualizar y desplegar la aplicación.</li>
+  </ul>
+  <p>Este tutorial cumple con el alcance requerido, proporcionando una introducción completa y práctica, capaz de formar las bases para continuar con proyectos más avanzados.</p>
+
+  <button 
+    class="back-top-btn" 
+    *ngIf="showBackTop"
+    (click)="scrollToTop()">
+    ↑
+  </button>
+
+</section>

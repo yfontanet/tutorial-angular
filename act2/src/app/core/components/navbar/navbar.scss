@@ -1,0 +1,44 @@
+.navbar {
+  width: 100%;
+  background: #1e3c72;
+  padding: 0.75rem 0;
+  color: white;
+
+  .nav-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+    margin: 0;
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.35rem 0.5rem;
+      border-radius: 6px;
+    }
+
+    a.active {
+      background: rgba(255,255,255,0.12);
+    }
+
+    a:hover {
+      opacity: 0.9;
+    }
+  }
+}
